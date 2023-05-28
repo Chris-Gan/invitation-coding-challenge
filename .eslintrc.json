@@ -17,6 +17,7 @@
     "rules": {
         "prettier/prettier": ["error", { "endOfLine": "auto" }],
         "no-use-before-define": "off",
+        " @typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
         "react/react-in-jsx-scope": ["off"],
@@ -31,11 +32,14 @@
             }
         ],
         "react/jsx-props-no-spreading": [2, { "custom": "ignore" }],
-        "no-console": "off"
+        "no-console": "off",
+        "react/require-default-props": "off"
     },
     "settings": {
         "import/resolver": {
-            "typescript": {}
+            "typescript": {
+                "alwaysTryTypes": true
+            }
         }
     }
 }

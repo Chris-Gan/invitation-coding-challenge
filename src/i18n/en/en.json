@@ -1,0 +1,24 @@
+{
+    "language": "Language",
+    "english": "English",
+    "chinese": "Chinese",
+    "french": "French",
+    "toggleThemeLabel": "Toggle theme",
+
+    "mainPageHeader": "A better way to enjoy every day.",
+    "mainPageSubheader": "Be the first to know who we are.",
+    "inviteButtonLabel": "Request an invite",
+
+    "formHeader": "Request an Invite",
+    "fullNameFieldLabel": "Full Name",
+    "emailFieldLabel": "Email",
+    "confirmEmailFieldLabel": "Confirm Email",
+    "rememberMeCheckboxLabel": "Remember me?",
+    "submitButtonLabel": "Submit",
+
+    "pastingNotAllowed": "Pasting is disabled for this field",
+    "minThreeCharacters": "This field must be at least 3 characters",
+    "requiredField": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "mismatchEmail": "Email does not match"
+}

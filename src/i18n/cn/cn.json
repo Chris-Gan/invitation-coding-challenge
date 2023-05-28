@@ -1,0 +1,24 @@
+{
+    "language": "语言",
+    "english": "英文",
+    "chinese": "中文",
+    "french": "法语",
+    "toggleThemeLabel": "切换主题",
+
+    "mainPageHeader": "享受每一天的更好方式",
+    "mainPageSubheader": "成为第一个知道我们是谁的人",
+    "inviteButtonLabel": "立即获邀",
+
+    "formHeader": "请求邀请",
+    "fullNameFieldLabel": "全名",
+    "emailFieldLabel": "邮箱地址",
+    "confirmEmailFieldLabel": "确认邮箱地址",
+    "rememberMeCheckboxLabel": "记住我？",
+    "submitButtonLabel": "提交",
+
+    "pastingNotAllowed": "此项段禁用粘贴",
+    "minThreeCharacters": "此字段必须至少包含 3 个字符",
+    "requiredField": "必须项",
+    "invalidEmail": "无效邮件地址",
+    "mismatchEmail": "电子邮件地址不匹配"
+}

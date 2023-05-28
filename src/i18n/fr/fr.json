@@ -1,0 +1,24 @@
+{
+    "language": "Langue",
+    "english": "l' Anglais",
+    "chinese": "le chinois",
+    "french": "le français",
+    "toggleThemeLabel": "Basculer le thème",
+
+    "mainPageHeader": "Une meilleure façon de profiter de chaque jour.",
+    "mainPageSubheader": "Soyez le premier à savoir qui nous sommes",
+    "inviteButtonLabel": "Demandez une invitation",
+
+    "formHeader": "Demandez une invitation",
+    "fullNameFieldLabel": "Nom et prénom",
+    "emailFieldLabel": "E-mail",
+    "confirmEmailFieldLabel": "Confirmez votre email",
+    "rememberMeCheckboxLabel": "Souviens-toi de moi?",
+    "submitButtonLabel": "Soumettre",
+
+    "pastingNotAllowed": "Le collage est désactivé pour ce champ",
+    "minThreeCharacters": "Ce champ doit contenir au moins 3 caractères",
+    "requiredField": "Ce champ est obligatoire",
+    "invalidEmail": "Adresse e-mail invalide",
+    "mismatchEmail": "Email ne correspond pas"
+}

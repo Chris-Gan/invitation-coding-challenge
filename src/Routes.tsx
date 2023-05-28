@@ -1,11 +1,11 @@
-import { Typography } from '@mui/material';
+import MainPage from 'views/MainPage';
 import React from 'react';
 import { Routes as RoutesWrapper, Route } from 'react-router-dom';
 
 const Routes = () => {
     return (
         <RoutesWrapper>
-            <Route index element={<Typography>Chris personal template</Typography>} />
+            <Route index element={<MainPage />} />
         </RoutesWrapper>
     );
 };
