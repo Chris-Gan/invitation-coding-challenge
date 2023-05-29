@@ -1,14 +1,38 @@
-import { Box, Button, Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Backdrop, Box, Button, CircularProgress, IconButton, Snackbar, Typography } from '@mui/material';
 import RegistrationForm from 'components/RegistrationForm.tsx';
+import SuccessfulRegistration from 'components/SuccessfulResgistration';
 import { registrationFormInitialValues } from 'constant/form';
-import { FormikProvider, useFormik } from 'formik';
-import { useState } from 'react';
+import { FormikHelpers, FormikProvider, useFormik } from 'formik';
+import { RegistrationFormInterface } from 'interfaces/form';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { postInvitationRegistration } from 'services/backendServices';
 import * as Yup from 'yup';
 
 const MainPage = () => {
     const { t } = useTranslation();
-    const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [formDialogOpen, setFormDialogOpen] = useState(false);
+    const [successfulDialogOpen, setSuccessfulDialogOpen] = useState(false);
+
+    const initialFormValues = useMemo(() => {
+        const storedUser = localStorage.getItem('users');
+        if (storedUser) {
+            const parsedUser = JSON.parse(storedUser);
+            if (parsedUser) {
+                return {
+                    ...registrationFormInitialValues,
+                    fullName: parsedUser.name,
+                    email: parsedUser.email,
+                    rememberMe: !!parsedUser,
+                };
+            }
+        }
+        return registrationFormInitialValues;
+    }, [formDialogOpen]);
 
     const validationSchema = Yup.object().shape({
         fullName: Yup.string()
@@ -22,18 +46,45 @@ const MainPage = () => {
             .required(t('requiredField') as string),
         rememberMe: Yup.boolean(),
     });
+
+    const handleOnSubmit = async (values: RegistrationFormInterface, { resetForm }: FormikHelpers<RegistrationFormInterface>) => {
+        setLoading(true);
+        try {
+            await postInvitationRegistration(values);
+
+            if (!values.rememberMe) {
+                localStorage.removeItem('users');
+            }
+
+            resetForm();
+            setLoading(false);
+            setFormDialogOpen(false);
+            setSuccessfulDialogOpen(true);
+        } catch (error: any) {
+            setLoading(false);
+            setSnackbarOpen(true);
+            setSnackbarMessage(error.response.data.errorMessage);
+        }
+    };
     const formik = useFormik({
-        initialValues: registrationFormInitialValues,
+        initialValues: initialFormValues,
         validateOnMount: true,
+        enableReinitialize: true,
         validationSchema,
-        onSubmit: (values) => {
-            console.log({ values });
-        },
+        onSubmit: handleOnSubmit,
     });
 
-    const toggleFormDialog = () => {
-        setOpen((prev) => !prev);
+    const handleSnackbarClose = () => {
+        setSnackbarOpen(false);
     };
+
+    const toggleSnackbar = () => {
+        setSnackbarOpen((prev) => !prev);
+    };
+    const toggleFormDialog = () => {
+        setFormDialogOpen((prev) => !prev);
+    };
+
     return (
         <>
             <Box
@@ -52,8 +103,29 @@ const MainPage = () => {
                 </Button>
             </Box>
             <FormikProvider value={formik}>
-                <RegistrationForm isOpened={open} handleDialogOpen={setOpen} />
+                <RegistrationForm
+                    isOpened={formDialogOpen}
+                    handleDialogOpen={setFormDialogOpen}
+                    snackbarControls={{ isSnackBarOpen: snackbarOpen, setSnackbarMessage, toggleSnackbar }}
+                />
+                <Backdrop open={loading} sx={{ zIndex: 1500 }}>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </FormikProvider>
+
+            <SuccessfulRegistration isOpened={successfulDialogOpen} handleDialogOpen={setSuccessfulDialogOpen} />
+            <Snackbar
+                open={snackbarOpen}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                message={snackbarMessage}
+                action={
+                    <IconButton size="small" aria-label="close" color="inherit" onClick={handleSnackbarClose}>
+                        <CloseIcon fontSize="small" />
+                    </IconButton>
+                }
+                autoHideDuration={6000}
+                onClose={handleSnackbarClose}
+            />
         </>
     );
 };

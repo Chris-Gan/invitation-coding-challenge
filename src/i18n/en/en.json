@@ -4,6 +4,7 @@
     "chinese": "Chinese",
     "french": "French",
     "toggleThemeLabel": "Toggle theme",
+    "allRightsReservedLabel": "All rights reserved.",
 
     "mainPageHeader": "A better way to enjoy every day.",
     "mainPageSubheader": "Be the first to know who we are.",
@@ -15,6 +16,10 @@
     "confirmEmailFieldLabel": "Confirm Email",
     "rememberMeCheckboxLabel": "Remember me?",
     "submitButtonLabel": "Submit",
+
+    "successfulRegistrationHeader": "Successful Registration",
+    "successfulRegistrationDescription": "Your email is registered and you shall receive a confirmation email containing the details within 24 hours. See you there!",
+    "closeButtonLabel": "Close",
 
     "pastingNotAllowed": "Pasting is disabled for this field",
     "minThreeCharacters": "This field must be at least 3 characters",

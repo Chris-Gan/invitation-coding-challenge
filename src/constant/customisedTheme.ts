@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { grey, red } from '@mui/material/colors';
+import { grey, pink, red } from '@mui/material/colors';
 import GoudyOldStyle from '../fonts/GoudyOldStyle/GOUDOS.ttf';
 
 const baseTheme = createTheme({
@@ -78,6 +78,20 @@ export const darkTheme = createTheme({
                         backgroundColor: red[900],
                         color: '#fff',
                     },
+                },
+            },
+        },
+        MuiFormHelperText: {
+            styleOverrides: {
+                root: {
+                    '&.MuiFormHelperText-root.Mui-error': { color: pink[300] },
+                },
+            },
+        },
+        MuiFormLabel: {
+            styleOverrides: {
+                root: {
+                    '&.MuiFormLabel-root.Mui-error': { color: pink[300] },
                 },
             },
         },

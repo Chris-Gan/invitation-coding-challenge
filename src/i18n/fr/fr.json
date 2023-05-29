@@ -4,6 +4,7 @@
     "chinese": "le chinois",
     "french": "le français",
     "toggleThemeLabel": "Basculer le thème",
+    "allRightsReservedLabel": "Tous les droits sont réservés.",
 
     "mainPageHeader": "Une meilleure façon de profiter de chaque jour.",
     "mainPageSubheader": "Soyez le premier à savoir qui nous sommes",
@@ -15,6 +16,10 @@
     "confirmEmailFieldLabel": "Confirmez votre email",
     "rememberMeCheckboxLabel": "Souviens-toi de moi?",
     "submitButtonLabel": "Soumettre",
+
+    "successfulRegistrationHeader": "Inscription réussie",
+    "successfulRegistrationDescription": "Votre e-mail est enregistré et vous recevrez un e-mail de confirmation contenant les détails dans les 24 heures. On se voit là-bas!",
+    "closeButtonLabel": "Fermer",
 
     "pastingNotAllowed": "Le collage est désactivé pour ce champ",
     "minThreeCharacters": "Ce champ doit contenir au moins 3 caractères",

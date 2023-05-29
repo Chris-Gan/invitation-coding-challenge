@@ -1,21 +1,22 @@
 import { SxProps } from '@mui/material';
 
-export interface RegistrationForm {
+export interface RegistrationFormInterface {
     fullName: string;
     email: string;
     confirmEmail: string;
     rememberMe: boolean;
 }
 
-export interface DisableCopyPaste {
+export interface SnackbarControlsInterface {
     isSnackBarOpen: boolean;
     setSnackbarMessage: React.Dispatch<React.SetStateAction<string>>;
-    handleCopyPaste: () => void;
+    toggleSnackbar: () => void;
 }
 
 export interface InputFieldProps {
     fieldName: string;
     inputLabel: string;
+    disableAutocomplete?: boolean;
     fieldStyle?: SxProps;
-    disableCopyPaste?: DisableCopyPaste;
+    disableCopyPaste?: SnackbarControlsInterface;
 }

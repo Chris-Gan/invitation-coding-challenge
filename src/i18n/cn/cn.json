@@ -4,6 +4,7 @@
     "chinese": "中文",
     "french": "法语",
     "toggleThemeLabel": "切换主题",
+    "allRightsReservedLabel": "版权所有",
 
     "mainPageHeader": "享受每一天的更好方式",
     "mainPageSubheader": "成为第一个知道我们是谁的人",
@@ -15,6 +16,10 @@
     "confirmEmailFieldLabel": "确认邮箱地址",
     "rememberMeCheckboxLabel": "记住我？",
     "submitButtonLabel": "提交",
+
+    "successfulRegistrationHeader": "注册成功",
+    "successfulRegistrationDescription": "您的电子邮件已注册成功，您将在 24 小时内收到一封包含详细信息的确认电子邮件。 到时候那里见！",
+    "closeButtonLabel": "关闭",
 
     "pastingNotAllowed": "此项段禁用粘贴",
     "minThreeCharacters": "此字段必须至少包含 3 个字符",
