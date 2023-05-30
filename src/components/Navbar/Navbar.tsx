@@ -39,6 +39,7 @@ const Navbar = () => {
                     <Button
                         id="language-button"
                         variant="outlined"
+                        data-testid="languageButton"
                         ref={languageButtonRef}
                         aria-controls="language-menu"
                         aria-haspopup="true"
@@ -73,7 +74,7 @@ const Navbar = () => {
                         </MenuItem>
                     </Menu>
                     <Tooltip title={t('toggleThemeLabel')} arrow placement="bottom">
-                        <IconButton sx={{ ml: 1 }} onClick={() => updateMode()} color="inherit">
+                        <IconButton data-testid="themeButton" sx={{ ml: 1 }} onClick={() => updateMode()} color="inherit">
                             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
                     </Tooltip>

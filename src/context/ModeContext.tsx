@@ -1,8 +1,7 @@
 import { Theme, ThemeProvider, responsiveFontSizes } from '@mui/material';
 import { darkTheme, lightTheme } from 'constant/customisedTheme';
-// import { blueGrey, grey, purple } from '@mui/material/colors';
 import { ColorMode } from 'interfaces/colorContext';
-import { createContext, useContext, useState, useMemo, ReactNode, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useMemo, ReactNode, useCallback, useEffect } from 'react';
 
 export const updateColorModeContext = createContext<() => void>({} as () => void);
 

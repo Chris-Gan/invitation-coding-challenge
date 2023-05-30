@@ -11,6 +11,12 @@ const config: Config.InitialOptions = {
     moduleNameMapper: {
         '\\.(css|scss|pcss)$': '<rootDir>/__mocks__/CSSStub.js',
         '\\.(jpg|jpeg|svg|png)$': '<rootDir>/__mocks__/assetStub.js',
+        '\\.(ttf)$': '<rootDir>/__mocks__/fileMock.js',
+        '^context/(.*)$': '<rootDir>/src/context/$1',
+        '^components/(.*)$': '<rootDir>/src/components/$1',
+        '^constant/(.*)$': '<rootDir>/src/constant/$1',
+        '^services/(.*)$': '<rootDir>/src/services/$1',
+        '^interfaces/(.*)$': '<rootDir>/src/interfaces/$1',
     },
 };
 export default config;

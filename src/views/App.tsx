@@ -1,8 +1,8 @@
 import { Box, CssBaseline, GlobalStyles } from '@mui/material';
 import Routes from 'Routes';
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
-import Footer from 'components/Footer';
-import Navbar from 'components/Navbar';
+import Footer from 'components/Footer/Footer';
+import Navbar from 'components/Navbar/Navbar';
 import Provider from 'context/Provider';
 import { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';

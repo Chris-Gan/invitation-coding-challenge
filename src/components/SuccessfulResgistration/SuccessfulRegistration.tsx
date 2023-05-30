@@ -1,6 +1,6 @@
+import React from 'react';
 import { Dialog, DialogTitle, Typography, IconButton, DialogContent, Divider, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 type Props = {

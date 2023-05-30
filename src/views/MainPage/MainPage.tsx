@@ -1,11 +1,11 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { Backdrop, Box, Button, CircularProgress, IconButton, Snackbar, Typography } from '@mui/material';
-import RegistrationForm from 'components/RegistrationForm.tsx';
-import SuccessfulRegistration from 'components/SuccessfulResgistration';
+import RegistrationForm from 'components/RegistrationForm.tsx/RegistrationForm';
+import SuccessfulRegistration from 'components/SuccessfulResgistration/SuccessfulRegistration';
 import { registrationFormInitialValues } from 'constant/form';
 import { FormikHelpers, FormikProvider, useFormik } from 'formik';
 import { RegistrationFormInterface } from 'interfaces/form';
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { postInvitationRegistration } from 'services/backendServices';
 import * as Yup from 'yup';
@@ -92,13 +92,19 @@ const MainPage = () => {
                 sx={{ justifyContent: 'flex-start', alignItems: 'center', pt: '20vh', textAlign: 'center', backgroundColor: 'warning' }}
                 flexDirection="column"
             >
-                <Typography variant="h3" sx={{ fontWeight: '900', mt: 3.5, mb: 2.5 }}>
+                <Typography data-testid="mainPageHeader" variant="h3" sx={{ fontWeight: '900', mt: 3.5, mb: 2.5 }}>
                     {t('mainPageHeader')}
                 </Typography>
-                <Typography variant="h5" sx={{ fontWeight: '800', mb: 5.5 }}>
+                <Typography data-testid="mainPageSubheader" variant="h5" sx={{ fontWeight: '800', mb: 5.5 }}>
                     {t('mainPageSubheader')}
                 </Typography>
-                <Button color="primary" variant="contained" onClick={toggleFormDialog} sx={{ minHeight: '50px', minWidth: '300px', fontWeight: 900 }}>
+                <Button
+                    data-testid="inviteButtonLabel"
+                    color="primary"
+                    variant="contained"
+                    onClick={toggleFormDialog}
+                    sx={{ minHeight: '50px', minWidth: '300px', fontWeight: 900 }}
+                >
                     {t('inviteButtonLabel')}
                 </Button>
             </Box>
