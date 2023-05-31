@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const currentLanguage = i18n.language;
+    console.log({ currentLanguage });
     const theme = useTheme();
     const updateMode = useColorModeUpdate();
     const [anchorEl, setAnchorEl] = useState<Element | null>(null);
@@ -63,7 +64,7 @@ const Navbar = () => {
                         open={Boolean(anchorEl)}
                         onClose={handleCloseDropdown}
                     >
-                        <MenuItem disabled={currentLanguage === 'en'} onClick={() => handleLanguageSelected('en')}>
+                        <MenuItem disabled={currentLanguage === 'en' || currentLanguage === 'en-US'} onClick={() => handleLanguageSelected('en')}>
                             {t('english')}
                         </MenuItem>
                         <MenuItem disabled={currentLanguage === 'fr'} onClick={() => handleLanguageSelected('fr')}>
