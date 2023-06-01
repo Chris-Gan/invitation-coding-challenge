@@ -114,7 +114,7 @@ const MainPage = () => {
                     handleDialogOpen={setFormDialogOpen}
                     snackbarControls={{ isSnackBarOpen: snackbarOpen, setSnackbarMessage, toggleSnackbar }}
                 />
-                <Backdrop open={loading} sx={{ zIndex: 1500 }}>
+                <Backdrop data-testid="loader" open={loading} sx={{ zIndex: 1500 }}>
                     <CircularProgress color="inherit" />
                 </Backdrop>
             </FormikProvider>

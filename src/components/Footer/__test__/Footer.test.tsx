@@ -16,28 +16,32 @@ const MockedFooter = (props: { languageChosen?: LanguageChoices }) => {
     );
 };
 
-describe('Footer', () => {
-    it('renders the copyright text', () => {
-        const { getByText } = render(<MockedFooter />);
-        const copyrightElement = getByText('© 2023 Broccoli & Co.');
-        expect(copyrightElement).toBeInTheDocument();
+describe('<Footer />', () => {
+    describe('contains components include', () => {
+        it('copyright text', () => {
+            const { getByText } = render(<MockedFooter />);
+            const copyrightElement = getByText('© 2023 Broccoli & Co.');
+            expect(copyrightElement).toBeInTheDocument();
+        });
+
+        it('renders the all rights reserved text in English', () => {
+            const { getByText } = render(<MockedFooter />);
+            const rightsElement = getByText(/All rights reserved./i);
+            expect(rightsElement).toBeInTheDocument();
+        });
     });
 
-    it('renders the all rights reserved text in English', () => {
-        const { getByText } = render(<MockedFooter />);
-        const rightsElement = getByText(/All rights reserved./i);
-        expect(rightsElement).toBeInTheDocument();
-    });
+    describe('contains internalization interactions include', () => {
+        it('renders the all rights reserved text in Chinese', () => {
+            const { getByText } = render(<MockedFooter languageChosen="cn" />);
+            const rightsElement = getByText(/版权所有/i);
+            expect(rightsElement).toBeInTheDocument();
+        });
 
-    it('renders the all rights reserved text in Chinese', () => {
-        const { getByText } = render(<MockedFooter languageChosen="cn" />);
-        const rightsElement = getByText(/版权所有/i);
-        expect(rightsElement).toBeInTheDocument();
-    });
-
-    it('renders the all rights reserved text in French', () => {
-        const { getByText } = render(<MockedFooter languageChosen="fr" />);
-        const rightsElement = getByText(/Tous les droits sont réservés./i);
-        expect(rightsElement).toBeInTheDocument();
+        it('renders the all rights reserved text in French', () => {
+            const { getByText } = render(<MockedFooter languageChosen="fr" />);
+            const rightsElement = getByText(/Tous les droits sont réservés./i);
+            expect(rightsElement).toBeInTheDocument();
+        });
     });
 });

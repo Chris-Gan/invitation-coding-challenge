@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const currentLanguage = i18n.language;
-    console.log({ currentLanguage });
     const theme = useTheme();
     const updateMode = useColorModeUpdate();
     const [anchorEl, setAnchorEl] = useState<Element | null>(null);

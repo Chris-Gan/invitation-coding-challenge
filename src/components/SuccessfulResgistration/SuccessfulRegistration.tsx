@@ -13,7 +13,7 @@ const SuccessfulRegistration = ({ isOpened, handleDialogOpen }: Props) => {
         handleDialogOpen(false);
     };
     return (
-        <Dialog open={isOpened} onClose={handleClose}>
+        <Dialog data-testid="successfulRegistrationDialog" open={isOpened} onClose={handleClose}>
             <DialogTitle>
                 <Typography sx={{ fontSize: '24px' }} fontWeight={700}>
                     {' '}

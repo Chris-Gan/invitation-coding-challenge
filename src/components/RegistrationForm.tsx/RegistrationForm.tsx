@@ -25,7 +25,7 @@ const RegistrationForm = ({ isOpened, handleDialogOpen, snackbarControls }: Prop
     return (
         <Dialog open={isOpened} onClose={handleClose}>
             <DialogTitle>
-                <Typography sx={{ fontSize: '24px' }} fontWeight={700}>
+                <Typography data-testid="registrationFormHeader" sx={{ fontSize: '24px' }} fontWeight={700}>
                     {' '}
                     {t('formHeader')}
                 </Typography>
@@ -61,7 +61,14 @@ const RegistrationForm = ({ isOpened, handleDialogOpen, snackbarControls }: Prop
                         }
                     />
                     <CustomisedCheckbox fieldName="rememberMe" inputLabel={t('rememberMeCheckboxLabel')} fieldStyle={{ mb: 1, ml: 0.5 }} />
-                    <Button sx={{ mt: 2 }} disabled={!isValid || isSubmitting || !dirty} fullWidth variant="contained" type="submit">
+                    <Button
+                        data-testid="registrationFormSubmitBtn"
+                        sx={{ mt: 2 }}
+                        disabled={!isValid || isSubmitting || !dirty}
+                        fullWidth
+                        variant="contained"
+                        type="submit"
+                    >
                         {t('submitButtonLabel')}
                     </Button>
                 </Form>
