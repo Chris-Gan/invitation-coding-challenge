@@ -16,6 +16,6 @@ export const postInvitationRegistration = async (values: RegistrationFormInterfa
         localStorage.setItem('users', JSON.stringify(payload));
     }
 
-    const data = await httpClient.post(endpoint, payload);
+    const data = await httpClient.post(endpoint as string, payload);
     return data;
 };

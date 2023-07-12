@@ -61,6 +61,7 @@ const MainPage = () => {
             setFormDialogOpen(false);
             setSuccessfulDialogOpen(true);
         } catch (error: any) {
+            console.log({ error });
             setLoading(false);
             setSnackbarOpen(true);
             setSnackbarMessage(error.response.data.errorMessage);
