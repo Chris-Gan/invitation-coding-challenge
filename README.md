@@ -26,6 +26,8 @@ In addition to the original functionality, this project includes the following f
 
 4. **Comprehensive Unit Tests**: The project includes a comprehensive suite of unit tests to ensure the reliability and correctness of the code.
 
+5. **Mocked Failed Cases**: The project includes a fail case demo which can be tested out by entering <ins>testFail@gmail.com</ins> into the email field.
+
 ## Live Demo
 You can check out the live demo of the application at: [Coding Challenge](https://www.example.com)
 
